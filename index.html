@@ -596,13 +596,13 @@
           </div>
         </div>
 
-        <!-- Slide 2 — locked -->
+        <!-- Slide 2 — locked (photo3) -->
         <div class="slide locked" id="slide-1" data-index="1">
           <div class="photo-frame-outer">
             <div class="photo-frame-corner-tl">✦</div>
             <div class="photo-frame-corner-br">✦</div>
             <div class="photo-frame-inner">
-              <img class="photo-img" src="photo2.jpg" alt="Secret photo 2" width="680" loading="lazy" />
+              <img class="photo-img" src="photo3.jpg" alt="Secret photo 3" width="680" loading="lazy" />
               <div class="pin-overlay" id="overlay-1">
                 <div class="pin-bubble">
                   <span class="pin-bubble-icon">💌</span>
@@ -637,96 +637,12 @@
           </div>
         </div>
 
-        <!-- Slide 3 — locked -->
-        <div class="slide locked" id="slide-2" data-index="2">
-          <div class="photo-frame-outer">
-            <div class="photo-frame-corner-tl">✦</div>
-            <div class="photo-frame-corner-br">✦</div>
-            <div class="photo-frame-inner">
-              <img class="photo-img" src="photo3.jpg" alt="Secret photo 3" width="680" loading="lazy" />
-              <div class="pin-overlay" id="overlay-2">
-                <div class="pin-bubble">
-                  <span class="pin-bubble-icon">💌</span>
-                  <p class="pin-bubble-text">Write the secret</p>
-                </div>
-                <div class="pin-form" id="pinForm-2">
-                  <div class="pin-dots" id="pinDots-2">
-                    <div class="pin-dot"></div>
-                    <div class="pin-dot"></div>
-                    <div class="pin-dot"></div>
-                    <div class="pin-dot"></div>
-                    <div class="pin-dot"></div>
-                  </div>
-                  <div class="pin-keypad">
-                    <button class="pin-key" data-n="1">1</button>
-                    <button class="pin-key" data-n="2">2</button>
-                    <button class="pin-key" data-n="3">3</button>
-                    <button class="pin-key" data-n="4">4</button>
-                    <button class="pin-key" data-n="5">5</button>
-                    <button class="pin-key" data-n="6">6</button>
-                    <button class="pin-key" data-n="7">7</button>
-                    <button class="pin-key" data-n="8">8</button>
-                    <button class="pin-key" data-n="9">9</button>
-                    <button class="pin-key zero" data-n="0">0</button>
-                    <button class="pin-key del" data-del="1">⌫</button>
-                  </div>
-                  <div class="pin-error" id="pinErr-2">Wrong secret ✕</div>
-                </div>
-              </div>
-              <div class="photo-caption">Class of 2026 · Faculty of Agriculture · Menoufia University</div>
-            </div>
-          </div>
-        </div>
-
-        <!-- Slide 4 — locked -->
-        <div class="slide locked" id="slide-3" data-index="3">
-          <div class="photo-frame-outer">
-            <div class="photo-frame-corner-tl">✦</div>
-            <div class="photo-frame-corner-br">✦</div>
-            <div class="photo-frame-inner">
-              <img class="photo-img" src="photo4.jpg" alt="Secret photo 4" width="680" loading="lazy" />
-              <div class="pin-overlay" id="overlay-3">
-                <div class="pin-bubble">
-                  <span class="pin-bubble-icon">💌</span>
-                  <p class="pin-bubble-text">Write the secret</p>
-                </div>
-                <div class="pin-form" id="pinForm-3">
-                  <div class="pin-dots" id="pinDots-3">
-                    <div class="pin-dot"></div>
-                    <div class="pin-dot"></div>
-                    <div class="pin-dot"></div>
-                    <div class="pin-dot"></div>
-                    <div class="pin-dot"></div>
-                  </div>
-                  <div class="pin-keypad">
-                    <button class="pin-key" data-n="1">1</button>
-                    <button class="pin-key" data-n="2">2</button>
-                    <button class="pin-key" data-n="3">3</button>
-                    <button class="pin-key" data-n="4">4</button>
-                    <button class="pin-key" data-n="5">5</button>
-                    <button class="pin-key" data-n="6">6</button>
-                    <button class="pin-key" data-n="7">7</button>
-                    <button class="pin-key" data-n="8">8</button>
-                    <button class="pin-key" data-n="9">9</button>
-                    <button class="pin-key zero" data-n="0">0</button>
-                    <button class="pin-key del" data-del="1">⌫</button>
-                  </div>
-                  <div class="pin-error" id="pinErr-3">Wrong secret ✕</div>
-                </div>
-              </div>
-              <div class="photo-caption">Class of 2026 · Faculty of Agriculture · Menoufia University</div>
-            </div>
-          </div>
-        </div>
-
       </div><!-- /gallery-track -->
     </div><!-- /gallery-track-wrap -->
 
-    <!-- dots + arrows -->
+    <!-- dots + arrows — now 2 slides only -->
     <div class="gallery-dots" id="galleryDots">
       <div class="gdot active"></div>
-      <div class="gdot"></div>
-      <div class="gdot"></div>
       <div class="gdot"></div>
     </div>
     <div class="gallery-arrows">
@@ -835,7 +751,6 @@
   prev.addEventListener('click', () => scrollTo(current - 1));
   next.addEventListener('click', () => scrollTo(current + 1));
 
-  // update dots on scroll
   let scrollTimer;
   wrap.addEventListener('scroll', () => {
     clearTimeout(scrollTimer);
@@ -855,7 +770,7 @@
 /* ── PIN LOGIC ── */
 (function(){
   const SECRET = '72024';
-  const slideIds = [1, 2, 3]; // data-index values for locked slides
+  const slideIds = [1]; // only slide-1 remains locked
 
   slideIds.forEach(idx => {
     const slide    = document.getElementById('slide-' + idx);
